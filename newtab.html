@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Scholar Focus</title>
+	<link rel="stylesheet" href="styles.css" />
+	<style>
+		:root { --scale: 1; }
+		body { margin: 0; font: calc(18px * var(--scale))/1.6 system-ui; background: #0b1220; color: #e5e7eb; display: grid; place-items: center; min-height: 100vh; }
+		.container { width: min(900px, 94vw); }
+		input[type="text"], input[type="date"] { width: 100%; padding: 12px; border-radius: 12px; border: 1px solid #334155; background: #0f172a; color: #e5e7eb; font-size: 18px; }
+		.controls { display: flex; gap: 10px; align-items: center; }
+		.quicklinks a { color: #60a5fa; text-decoration: none; margin: 0 8px; }
+		.card { margin-top: 20px; background: #0f172a; border: 1px solid #1f2937; border-radius: 12px; padding: 16px; }
+		button { background: #2563eb; color: #fff; border: none; border-radius: 8px; padding: 10px 14px; font: 14px system-ui; }
+		.small { color: #9ca3af; font-size: 14px; }
+		.todo { display: grid; grid-template-columns: 1fr 120px 120px auto; gap: 8px; align-items: center; }
+		.todo-list { display: grid; gap: 8px; margin-top: 8px; }
+	</style>
+</head>
+<body>
+	<div class="container">
+		<div class="controls" style="gap:8px;">
+			<input id="q" type="text" placeholder="Search scholarly databases..." />
+			<select id="mode">
+				<option value="relevant">Relevant</option>
+				<option value="newest">Newest</option>
+				<option value="cited">Highly Cited</option>
+			</select>
+			<button id="go">Search</button>
+		</div>
+		<div class="quicklinks" style="margin-top:12px; text-align:center;">
+			<a href="https://scholar.google.com" target="_blank">Google Scholar</a>
+			<a href="https://www.jstor.org" target="_blank">JSTOR</a>
+			<a href="https://pubmed.ncbi.nlm.nih.gov" target="_blank">PubMed</a>
+		</div>
+		<div class="card">
+			<h3 style="margin:0 0 8px 0">Pomodoro</h3>
+			<div class="controls">
+				<input id="work" type="number" min="5" max="120" value="25" style="width:80px" />
+				<span class="small">work</span>
+				<input id="rest" type="number" min="1" max="60" value="5" style="width:80px" />
+				<span class="small">rest</span>
+				<button id="start">Start</button>
+				<button id="stop">Stop</button>
+				<span id="timer" class="small">00:00</span>
+			</div>
+		</div>
+		<div class="card">
+			<h3 style="margin:0 0 8px 0">To-Do & Projects</h3>
+			<div class="controls" style="margin-bottom:8px;">
+				<input id="taskTitle" type="text" placeholder="New task" style="flex:2;" />
+				<input id="taskDue" type="date" style="flex:1;" />
+				<input id="taskProject" type="text" placeholder="Project" style="flex:1;" />
+				<button id="addTask">Add</button>
+			</div>
+			<div class="controls" style="margin-bottom:8px;">
+				<select id="template">
+					<option value="">Templates</option>
+					<option value="litrev">Literature Review</option>
+					<option value="experiment">Experiment</option>
+					<option value="draft">Paper Drafting</option>
+				</select>
+				<select id="filterProject"><option value="">All Projects</option></select>
+			</div>
+			<div id="todos" class="todo-list"></div>
+		</div>
+		<div class="controls" style="margin-top:16px; justify-content:flex-start;">
+			<label class="small">Font size</label>
+			<input id="fontScale" type="range" min="0.8" max="1.6" step="0.1" value="1" />
+			<label class="small"><input type="checkbox" id="dark" checked /> Dark mode</label>
+		</div>
+	</div>
+	<script src="newtab.js"></script>
+</body>
+</html>

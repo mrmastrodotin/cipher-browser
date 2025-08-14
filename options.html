@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Scholar Focus Options</title>
+	<link rel="stylesheet" href="styles.css" />
+	<style>
+		body { font: 14px/1.5 system-ui; margin: 0; background: #0b1220; color: #e5e7eb; }
+		main { max-width: 800px; margin: 40px auto; padding: 0 16px; }
+		section { background: #0f172a; border: 1px solid #1f2937; border-radius: 10px; padding: 16px; margin-bottom: 16px; }
+		label { display:block; margin-top: 8px; }
+		input, select, button { font: 14px system-ui; }
+		input[type="text"], input[type="number"], input[type="password"] { width: 100%; padding: 8px; background:#0f172a;color:#e5e7eb;border:1px solid #334155;border-radius:8px; }
+		button { background: #2563eb; color: #fff; border: none; border-radius: 8px; padding: 8px 12px; margin-top: 10px; }
+	</style>
+</head>
+<body>
+	<main>
+		<h2>Scholar Focus Options</h2>
+		<section>
+			<h3>Tab Freezing</h3>
+			<label>Minutes of inactivity before freeze</label>
+			<input id="freezeMinutes" type="number" min="5" max="240" />
+			<label><input id="respectPinned" type="checkbox" /> Respect pinned tabs</label>
+		</section>
+		<section>
+			<h3>Privacy</h3>
+			<label>Encryption Passphrase (used to encrypt notes and sessions)</label>
+			<input id="passphrase" type="password" placeholder="Enter a passphrase" />
+			<button id="savePass">Save Passphrase</button>
+			<div class="small" style="color:#9ca3af;margin-top:6px">Keep this safe; without it, encrypted data cannot be recovered.</div>
+		</section>
+		<section>
+			<h3>Appearance</h3>
+			<label>Dark mode by default <input id="darkModeDefault" type="checkbox" /></label>
+			<label>Default font scale</label>
+			<input id="defaultFontScale" type="number" step="0.1" min="0.8" max="1.6" />
+		</section>
+		<button id="saveAll">Save Settings</button>
+		<div id="status" style="margin-top:10px;color:#93c5fd"></div>
+	</main>
+	<script src="options.js"></script>
+</body>
+</html>
