@@ -1,2 +1,1 @@
-# cipher-browser
-Secure research browser (offline-capable)
+Student & Researcher Browser Wrapper
