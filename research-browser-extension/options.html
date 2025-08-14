@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Focus Research Options</title>
+	<link rel="stylesheet" href="styles/options.css">
+</head>
+<body>
+	<h2>Settings</h2>
+	<div class="group">
+		<label>Minutes to freeze inactive tabs <input id="inactivity" type="number" min="1" max="240" value="20"></label>
+	</div>
+	<div class="group">
+		<label><input id="freezePinned" type="checkbox"> Allow freezing pinned tabs</label>
+	</div>
+	<div class="group">
+		<label>Exclude URLs (one per line)</label>
+		<textarea id="exclusions" rows="4"></textarea>
+	</div>
+	<div class="group">
+		<label><input id="adblock" type="checkbox" checked> Enable ad & tracker blocking</label>
+	</div>
+	<div class="group">
+		<label><input id="offline" type="checkbox" checked> Enable offline cache</label>
+	</div>
+	<div class="group">
+		<label>Default font scale <input id="fontScale" type="range" min="0.9" max="1.5" step="0.05" value="1.0"><span id="fontScaleVal">1.0</span></label>
+	</div>
+	<div class="group">
+		<label>Encryption passphrase (optional, improves security)</label>
+		<input id="passphrase" type="password" placeholder="Set or change">
+		<button id="save-pass">Save Passphrase</button>
+	</div>
+	<div class="group">
+		<button id="save">Save Settings</button>
+		<span id="status"></span>
+	</div>
+	<hr>
+	<h2>Session Snapshots</h2>
+	<div id="snapshots"></div>
+	<script src="options.js"></script>
+</body>
+</html>

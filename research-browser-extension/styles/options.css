@@ -1,0 +1,4 @@
+.group{margin:10px 0;font-family:system-ui,sans-serif}
+.group label{display:block;margin-bottom:6px}
+#exclusions{width:100%;max-width:480px}
+.snapshot{display:flex;align-items:center;justify-content:space-between;padding:6px 8px;border:1px solid #eee;border-radius:8px;margin:6px 0}
