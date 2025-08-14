@@ -1,0 +1,8 @@
+.container{max-width:780px;margin:12vh auto 0 auto;padding:0 16px;font-family:system-ui,sans-serif}
+.search{display:flex;justify-content:center}
+.search input{width:100%;max-width:680px;padding:14px 16px;border-radius:28px;border:1px solid #ddd;font-size:18px}
+.links{display:flex;justify-content:center;gap:14px;margin:16px 0}
+.tools{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.tool{background:#f8f8f8;border:1px solid #eee;border-radius:8px;padding:8px 12px}
+:root.dark,.dark body{background:#121212;color:#e6e6e6}
+.dark .tool{background:#1e1e1e;border-color:#333}
