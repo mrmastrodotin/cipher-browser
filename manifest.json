@@ -1,0 +1,61 @@
+{
+  "manifest_version": 3,
+  "name": "Scholar Focus: Research Browser Wrapper",
+  "version": "0.1.1",
+  "description": "Distraction-free, research-optimized workspace: focus tools, tab freeze, sessions, annotations, cross-database search, and privacy.",
+  "action": {
+    "default_title": "Scholar Focus",
+    "default_popup": "popup.html"
+  },
+  "chrome_url_overrides": {
+    "newtab": "newtab.html"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "icons": {
+  },
+  "permissions": [
+    "activeTab",
+    "storage",
+    "tabs",
+    "scripting",
+    "downloads",
+    "declarativeNetRequest",
+    "contextMenus",
+    "alarms"
+  ],
+  "host_permissions": [
+    "<all_urls>",
+    "https://api.crossref.org/*",
+    "https://export.arxiv.org/*",
+    "https://eutils.ncbi.nlm.nih.gov/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_idle"
+    }
+  ],
+  "declarative_net_request": {
+    "rule_resources": [
+      {
+        "id": "blocklist",
+        "enabled": true,
+        "path": "rules/blocklist.json"
+      }
+    ]
+  },
+  "options_page": "options.html",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "styles.css"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}

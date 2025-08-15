@@ -1,0 +1,7 @@
+[
+	{ "id": 1, "priority": 1, "action": { "type": "block" }, "condition": { "urlFilter": "||doubleclick.net^", "resourceTypes": ["script", "xmlhttprequest", "image", "sub_frame"] } },
+	{ "id": 2, "priority": 1, "action": { "type": "block" }, "condition": { "urlFilter": "||google-analytics.com^", "resourceTypes": ["script", "xmlhttprequest"] } },
+	{ "id": 3, "priority": 1, "action": { "type": "block" }, "condition": { "urlFilter": "||facebook.com/tr^", "resourceTypes": ["script", "xmlhttprequest", "image"] } },
+	{ "id": 4, "priority": 1, "action": { "type": "block" }, "condition": { "urlFilter": "||adservice.google.com^", "resourceTypes": ["script", "xmlhttprequest"] } },
+	{ "id": 5, "priority": 1, "action": { "type": "block" }, "condition": { "urlFilter": "||googletagmanager.com^", "resourceTypes": ["script", "xmlhttprequest"] } }
+]
